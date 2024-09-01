@@ -47,20 +47,14 @@ const handleSubmit = async () => {
 };
 </script>
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-white">
+  <div class="min-h-screen flex items-center justify-center bg-white flex-col lg:flex-row">
     <div
-      class="bg-main text-white p-6 lg:p-8 flex flex-col items-center justify-center mr-40 rounded-xl h-full lg:h-5/6"
-      style="
-        margin-bottom: 0;
-        padding-bottom: 0;
-        min-height: 750px;
-        width: 650px;
-        overflow: hidden;
-      "
+      class="bg-main text-white flex-col items-center justify-center mr-40 rounded-xl h-full hidden lg:flex lg:mr-5 lg:ml-5 lg:w-5"
+      style="margin-bottom: 0; padding-bottom: 0; max-height: 750px; width: 650px; overflow: hidden;"
     >
       <h1
         style="width: 350px"
-        class="text-9xl text-center lg:text-4xl font-bold mb-4 font-inter"
+        class="text-9xl text-center lg:text-4xl font-bold mt-5 font-inter"
       >
         Welcome to the Cat Adoption Panel
       </h1>
@@ -71,7 +65,7 @@ const handleSubmit = async () => {
       />
     </div>
 
-    <div class="p-8 lg:p-16 flex flex-col lg:w-1/3 w-80">
+    <div class="p-8 lg:p-16 flex flex-col w-full max-w-xl md:max-w-xl lg:max-w-lg ">
       <div class="flex items-center mb-8">
         <img
           class="text-main"

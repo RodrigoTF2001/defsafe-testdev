@@ -1,3 +1,13 @@
+<script setup lang="ts">
+
+const router = useRouter();
+const logout = async() =>{
+  const supaAuth = useSupabaseClient();
+  const { error} = await supaAuth.auth.signOut()
+  router.push('/login')
+}
+</script>
+
 <template>
   <div class="w-80 text-white p-4 bg-white">
     <div class="flex items-center mb-4">
@@ -22,12 +32,4 @@
   </div>
 </template>
 
-<script setup lang="ts">
 
-const router = useRouter();
-const logout = async() =>{
-  const supaAuth = useSupabaseClient();
-  const { error} = await supaAuth.auth.signOut()
-  router.push('/login')
-}
-</script>

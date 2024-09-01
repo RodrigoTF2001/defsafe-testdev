@@ -57,20 +57,20 @@ const handleSubmit = async () => {
     v-if="showRegister"
     class="fixed inset-0 flex items-center justify-center bg-slate-300 bg-opacity-80"
   >
-    <div class="bg-white p-8 rounded-lg w-1/3">
+    <div class="bg-white p-6 sm:p-8 rounded-lg w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-4 sm:mx-auto">
       <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-bold text-text-primary">Register New Cat</h2>
-        <button @click="emitClose" class="text-red-500">X</button>
+        <h2 class="text-xl sm:text-2xl font-bold text-text-primary">Register New Cat</h2>
+        <button @click="emitClose" class="text-red-500 text-xl">&times;</button>
       </div>
-      <hr class="border-t-2 border-1 border-gray-300 mb-4" />
+      <hr class="border-t-2 border-gray-300 mb-4" />
       <button
         @click="setRandomCatName"
         class="ml-2 text-white px-4 py-2 rounded"
       >
         <img
-          class="text-main"
-          style="width: 40px"
+          class="w-8 sm:w-10"
           src="../assets/images/cat--bold.svg"
+          alt="Generate Name"
           title="Nome pro gato"
         />
       </button>
@@ -86,7 +86,7 @@ const handleSubmit = async () => {
         </UFormGroup>
         <UFormGroup class="mb-4" name="name">
           <label class="block text-main font-bold">Name</label>
-          <div class="flex row-auto">
+          <div class="flex">
             <UInput
               v-model="state.name"
               :style="{ backgroundColor: 'white', color: 'gray' }"
@@ -106,11 +106,11 @@ const handleSubmit = async () => {
           />
         </UFormGroup>
 
-        <div class="flex justify-end mt-6">
+        <div class="flex justify-end mt-6 space-x-4">
           <button
             type="button"
             @click="emitClose"
-            class="bg-cancel-button mr-4 text-text-secondary px-4 py-2 rounded"
+            class="bg-cancel-button text-text-secondary px-4 py-2 rounded"
           >
             Cancel
           </button>

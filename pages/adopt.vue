@@ -55,7 +55,7 @@ const logout = async () => {
       <div v-if="pending" class="text-center">
         <p>Loading...</p>
       </div>
-      <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div v-else class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-14">
         <div
           v-for="cat in catItems"
           :key="cat.id"

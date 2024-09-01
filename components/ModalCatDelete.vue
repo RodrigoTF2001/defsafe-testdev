@@ -33,33 +33,35 @@ const handleDelete = async () => {
     v-if="showDelete"
     class="fixed inset-0 flex items-center justify-center bg-slate-300 bg-opacity-80"
   >
-    <div class="bg-white p-8 rounded-lg w-1/6">
-      <div class="flex flex-col items-center mb-6">
+    <div class="bg-white p-6 rounded-lg max-w-64">
+      <div class="flex flex-col items-center mb-4">
         <div class="relative rounded">
           <div class="absolute inset-0 bg-red-500 opacity-20"></div>
-          <img class="w-10" src="../assets/images/trash.svg" alt="excluir" />
+          <img class="w-8" src="../assets/images/trash.svg" alt="excluir" />
         </div>
-        <h2 class="text-xl font-bold text-text-primary">Are You Sure?</h2>
+        <h2 class="text-lg font-bold text-text-primary mt-4">Are You Sure?</h2>
       </div>
 
-      <p class="text-center">
-        Are you sure want to delete this cat profile? This action cannot be
+      <p class="text-center text-text-secondary">
+        Are you sure you want to delete this cat profile? This action cannot be
         undone.
       </p>
 
-      <div class="flex justify-center mt-8">
+      <div class="flex justify-center mt-6">
         <button
           type="button"
           @click="emitClose"
-          class="bg-cancel-button mr-4 text-text-secondary px-4 py-2 rounded"
+          class="bg-cancel-button text-text-secondary px-4 py-2 rounded mr-4"
         >
           Cancel
         </button>
-        <button @click="handleDelete" class="bg-red-600 text-white px-4 py-2 rounded">
+        <button
+          @click="handleDelete"
+          class="bg-red-600 text-white px-4 py-2 rounded"
+        >
           Delete
         </button>
       </div>
     </div>
   </div>
 </template>
-
