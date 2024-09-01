@@ -7,11 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/supabase',
-    '@pinia/nuxt'
   ],
-  pinia: {
-    storesDirs: ['./stores/**'],
-  },
   app: {
     pageTransition: {
       name: 'fade',

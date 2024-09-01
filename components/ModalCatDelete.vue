@@ -35,7 +35,10 @@ const handleDelete = async () => {
   >
     <div class="bg-white p-8 rounded-lg w-1/6">
       <div class="flex flex-col items-center mb-6">
-        <img class="w-10" src="../assets/images/trash.svg" alt="excluir" />
+        <div class="relative rounded">
+          <div class="absolute inset-0 bg-red-500 opacity-20"></div>
+          <img class="w-10" src="../assets/images/trash.svg" alt="excluir" />
+        </div>
         <h2 class="text-xl font-bold text-text-primary">Are You Sure?</h2>
       </div>
 

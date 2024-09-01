@@ -13,12 +13,17 @@ const closeModal = () => {
 
 const catItems = ref([]);
 
-const { data,pending } = await useFetch('/api/cat', { method: 'GET' });
+const { data, pending } = await useFetch("/api/cat", { method: "GET" });
 
 catItems.value = data.value;
 
+const router = useRouter();
+const logout = async () => {
+  const supaAuth = useSupabaseClient();
+  const { error } = await supaAuth.auth.signOut();
+  router.push("/login");
+};
 </script>
-
 
 <template>
   <UContainer>
@@ -28,13 +33,22 @@ catItems.value = data.value;
         style="width: 40px"
         src="../assets/images/ph--cat.svg"
       />
-      <h5 class="text-lg font-bold text-main font-inter ml-2">
-        Cat Adoption Platform
-      </h5>
+      <div>
+        <h5 class="text-lg font-bold text-main font-inter ml-2">
+          Cat Adoption Platform
+        </h5>
+      </div>
+      <button
+        @click="logout"
+        class="bg-red-600 justify-end text-white px-4 py-2 rounded ml-14"
+      >
+        Exit
+      </button>
     </div>
     <hr class="border-t-2 border-1 border-gray-300 mb-4" />
     <div class="p-4">
       <h2 class="text-2xl font-bold mb-4 text-main">Cats for Adoption</h2>
+
       <p class="mb-4 text-text-secondary">
         Explore our list of lovable cats looking for their forever homes.
       </p>
@@ -65,9 +79,12 @@ catItems.value = data.value;
             Adopt
           </button>
         </div>
-        <ModalAdopt :show="showModalAdopt" @close="closeModal" :catId="selectedCatId"/>
+        <ModalAdopt
+          :show="showModalAdopt"
+          @close="closeModal"
+          :catId="selectedCatId"
+        />
       </div>
     </div>
   </UContainer>
 </template>
-

@@ -80,7 +80,7 @@ const closeModal = () => {
             </button>
             <button class="relative px-2 py-1 rounded mr-1 overflow-hidden" @click="openModalDelete(cat.id)">
               <div class="absolute inset-0 bg-red-500 opacity-20"></div>
-              <img class=" w-7 z-20" src="../assets/images/trash.svg" alt="excluir" />
+              <img class="w-7 z-20" src="../assets/images/trash.svg" alt="excluir" />
             </button>
           </td>
         </tr>

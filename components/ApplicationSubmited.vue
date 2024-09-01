@@ -5,7 +5,10 @@
   >
     <div class="bg-white p-8 rounded-lg w-1/6">
       <div class="flex flex-col items-center mb-6">
-        <img class="w-10" src="../assets/images/el--ok.svg" alt="excluir" />
+        <div class="relative rounded-lg">
+          <div class="absolute inset-0  bg-green-300 opacity-20"></div>
+          <img class="w-10" src="../assets/images/el--ok.svg" alt="ok" />
+        </div>
         <h2 class="text-xl font-bold text-text-primary">
           Application Submmited!
         </h2>

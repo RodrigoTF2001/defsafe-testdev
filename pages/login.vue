@@ -18,10 +18,6 @@ const state = reactive({
 const handleSubmit = async () => {
   const adminEmail = config.public.admin_email;
 
-  const encode = (text: string): string => {
-    return btoa(text); // Codifica em Base64
-  };
-
   const { data: authData, error: authError } =
     await supaAuth.auth.signInWithPassword({
       email: state.email,
@@ -33,7 +29,6 @@ const handleSubmit = async () => {
     return;
   }
 
-  // Get user data
   const { data: user, error: userError } = await supaAuth.auth.getUser();
 
   if (userError) {
@@ -45,8 +40,8 @@ const handleSubmit = async () => {
     const userEmail = user.user.email as string;
     if (userEmail !== adminEmail) {
       router.push("/adopt");
-    } else{
-      router.push("/admin-panel")
+    } else {
+      router.push("/admin-panel");
     }
   }
 };
