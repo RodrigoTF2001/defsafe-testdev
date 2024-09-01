@@ -2,6 +2,8 @@
 import { z } from "zod";
 import catNames from "~/utils/catsNames";
 
+const { $toast } = useNuxtApp();
+
 const props = defineProps({
   showUpdate: {
     type: Boolean,
@@ -76,6 +78,7 @@ const handleUpdate = async () => {
         id: props.catId,
       },
     });
+    $toast.success('Cat register updated with sucess!')
     window.location.reload();
   }
 };

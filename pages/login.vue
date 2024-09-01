@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { z } from "zod";
 
+const { $toast } = useNuxtApp();
 const supaAuth = useSupabaseClient();
 const config = useRuntimeConfig();
 const router = useRouter();
@@ -25,18 +26,19 @@ const handleSubmit = async () => {
     });
 
   if (authError) {
-    console.error("Error signing in:", authError.message);
+   $toast.error(`${authError.message}`)
     return;
   }
 
   const { data: user, error: userError } = await supaAuth.auth.getUser();
 
   if (userError) {
-    console.error("Error fetching user:", userError.message);
+    $toast.error(`${userError.message}`)
     return;
   }
 
   if (authData.user && user) {
+    $toast.success(`${user.user.aud}`)
     const userEmail = user.user.email as string;
     if (userEmail !== adminEmail) {
       router.push("/adopt");

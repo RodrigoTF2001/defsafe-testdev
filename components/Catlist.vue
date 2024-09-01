@@ -77,7 +77,7 @@ const closeModal = () => {
             <td class="border-b p-2 sm:p-4 font-inter text-text-secondary">
               {{ cat.name }}
             </td>
-            <td class="border-b p-2 sm:p-4 font-inter text-text-secondary">
+            <td class="border-b p-2 sm:p-4 font-inter text-text-secondary lg:w-3/6">
               {{ cat.description }}
             </td>
             <td class="border-b p-2 sm:p-4 font-inter text-text-secondary">

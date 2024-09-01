@@ -2,6 +2,8 @@
 import { z } from "zod";
 import catNames from "~/utils/catsNames";
 
+const { $toast } = useNuxtApp();
+
 const props = defineProps({
   showRegister: {
     type: Boolean,
@@ -47,6 +49,7 @@ const handleSubmit = async () => {
       method: "POST",
       body: state,
     });
+    $toast.success('Successfully created cat register!')
     window.location.reload()
   }
 };

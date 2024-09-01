@@ -1,4 +1,7 @@
 <script setup>
+
+const { $toast } = useNuxtApp();
+
 const props = defineProps({
   showDelete: {
     type: Boolean,
@@ -21,6 +24,7 @@ const handleDelete = async () => {
       method: 'DELETE',
       body: { id: props.catId }
     });
+    $toast.success('Cat register deleted with success!')
     window.location.reload()
   } catch (error) {
     console.error('Failed to delete the cat:', error);
